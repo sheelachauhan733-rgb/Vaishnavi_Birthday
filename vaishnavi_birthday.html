@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Vaishnavi 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      overflow: hidden;
+    }
+    .page {
+      display: none;
+      height: 100vh;
+      width: 100vw;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+      position: relative;
+      box-sizing: border-box;
+    }
+    .active {
+      display: block;
+      animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .quote-box {
+      background: rgba(255, 192, 203, 0.9);
+      color: #333;
+      font-size: 20px;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 15px;
+      max-width: 85%;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      word-wrap: break-word;
+      line-height: 1.5em;
+    }
+    .button {
+      background: #ff4b5c;
+      border: none;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .button:hover { background: #ff1e3c; }
+    .anim {
+      width: 150px;
+      margin: 20px auto;
+      display: block;
+    }
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: float 6s infinite;
+    }
+    .heart:before, .heart:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+    .heart:before { top: -10px; left: 0; }
+    .heart:after { left: -10px; top: 0; }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-800px) rotate(45deg); opacity: 0; }
+    }
+    .no-btn {
+      background: #555;
+      margin-left: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Hearts Background -->
+  <div class="hearts">
+    <div class="heart" style="left:5%; animation-duration:7s;"></div>
+    <div class="heart" style="left:25%; animation-duration:6s;"></div>
+    <div class="heart" style="left:60%; animation-duration:8s;"></div>
+    <div class="heart" style="left:85%; animation-duration:5s;"></div>
+  </div>
+
+  <!-- Page 1 -->
+  <div id="page1" class="page active">
+    <h1 style="font-size:28px;">🎉 Happy Birthday Vaishnavi 🎂</h1>
+    <div class="quote-box">
+      💖 You are the sunshine in my life, today and always 🌸🌟  
+      Wishing you endless smiles and love on 09 October 🎈
+    </div>
+    <img class="anim" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="panda">
+    <button class="button" onclick="nextPage('page2')">Start 💝</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div id="page2" class="page">
+    <div class="quote-box">
+      Happy Birthday Vaishnavi! 🎂🥳 Just a reminder that you’re adorable and amazing, not just today, but every day 😘💫
+    </div>
+    <img class="anim" src="https://media.giphy.com/media/3o6ZtpxSZbQRRnwCKQ/giphy.gif">
+    <button class="button" onclick="nextPage('page3')">Next 💖</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div id="page3" class="page">
+    <div class="quote-box">
+      Happy Birthday Vaishnavi 🎉💖 I hope your day is full of fun 🎈, surprises 🎁, and maybe a little bit of me too 😉🥰
+    </div>
+    <img class="anim" src="https://media.giphy.com/media/l0HlOvJ7yaacpuSas/giphy.gif">
+    <button class="button" onclick="nextPage('page4')">Next 💖</button>
+  </div>
+
+  <!-- Page 4 -->
+  <div id="page4" class="page">
+    <div class="quote-box">
+      Happy Birthday Vaishnavi 🌟💓 You make ordinary days feel extraordinary 💫 Hope your day is magical ✨🎂
+    </div>
+    <img class="anim" src="https://media.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif">
+    <button class="button" onclick="nextPage('page5')">Next 💖</button>
+  </div>
+
+  <!-- Page 5: Do you love me -->
+  <div id="page5" class="page">
+    <h2>Vaishnavi, Do you love me? 💕</h2>
+    <!-- Song -->
+    <audio id="loveSong" loop>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    <button class="button" onclick="nextPage('page8')">Yes 💘</button>
+    <button class="button no-btn" onclick="nextPage('page6')">No 🙈</button>
+  </div>
+
+  <!-- Page 6: Ask Again -->
+  <div id="page6" class="page">
+    <h2>Are you really sure Vaishnavi? 🥺 Please say Yes 💖</h2>
+    <button class="button" onclick="nextPage('page8')">Yes 💘</button>
+    <button class="button no-btn" onclick="nextPage('page7')">No 🙈</button>
+  </div>
+
+  <!-- Page 7: No Button disappears -->
+  <div id="page7" class="page">
+    <h2>Hehe... Now you can’t click No 😜💞</h2>
+    <button class="button" onclick="nextPage('page8')">Yes 💘</button>
+  </div>
+
+  <!-- Page 8: Final Closing Greeting -->
+  <div id="page8" class="page">
+    <h1>Love you too ❤️</h1>
+    <div class="quote-box">
+      🌹 Forever is not long enough with you 💞 <br><br>
+      💍 You are my today and all of my tomorrows 💘
+    </div>
+    <p style="font-size:20px;">Forever Yours,<br><b>Anuj 💕</b><br>
+    To my special one, <b>Vaishnavi 💖</b></p>
+    <img class="anim" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+  </div>
+
+  <script>
+    function nextPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+
+      // Play song only on proposal page
+      let song = document.getElementById("loveSong");
+      if (pageId === 'page5') {
+        song.play();
+      } else {
+        song.pause();
+        song.currentTime = 0;
+      }
+    }
+  </script>
+</body>
+</html>
